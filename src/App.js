@@ -2,11 +2,10 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [inputState, setInputState] = useState("type");
+  const [inputState, setInputState] = useState("");
 
   const addToFireDB = (e) => {
     e.preventDefault();
-    console.log("hi", inputState);
   };
 
   return (
