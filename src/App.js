@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [inputState, setInputState] = useState("type");
+
+  const addToFireDB = (e) => {
+    e.preventDefault();
+    console.log("hi", inputState);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>set and get data from db</h1>
+      <form onSubmit={addToFireDB}>
+        <label>add data to db</label>
+        <input
+          type="text"
+          value={inputState}
+          onChange={(e) => setInputState(e.target.value)}
+        />
+        <button type="submit">Add</button>
+      </form>
     </div>
   );
 }
