@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { db } from "./fire";
 import firebase from "firebase";
+import Todo from "./Todo";
 
 const useLogger = (logItem) => {
   useEffect(() => {
@@ -62,8 +63,12 @@ function App() {
       <div>
         {listInputState.map((item) => {
           return (
-            <div>
-              <p>{item.todo}</p>
+            <div key={item.id}>
+              <Todo
+                todo={item.todo}
+                inprogress={item.inprogress}
+                id={item.id}
+              />
             </div>
           );
         })}
