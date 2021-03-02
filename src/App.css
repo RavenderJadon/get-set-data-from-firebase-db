@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+.border {
+  border-style: ridge;
+  margin: 10px 700px;
+  background: rgb(164, 164, 193);
+  display: flex;
+  justify-content: space-between;
+}
